@@ -13,6 +13,7 @@
   }
   h1 { font-size: 1.5rem; line-height: 1.4; }
   h2 { font-size: 1.15rem; margin-top: 2.5rem; border-bottom: 1px solid #8884; padding-bottom: .3rem; }
+  h3 { font-size: 1rem; margin-top: 2rem; }
   .meta { font-size: .9rem; opacity: .75; }
   ul { padding-left: 1.3rem; }
   hr { margin: 4rem 0 2rem; border: 0; border-top: 1px solid #8884; }
@@ -48,9 +49,40 @@
   <li>カメラで撮影した写真、および端末内の写真ライブラリから選択した写真</li>
 </ul>
 <p>
-これらのデータが端末外へ送信されることはありません。
-本アプリをアンインストールすると、これらのデータは端末から削除されます。
-必要に応じて、アンインストール前に写真アプリ等へのバックアップをお願いします。
+<strong>本アプリ自身がこれらのデータを外部へ送信することはありません。</strong>
+ただし、Android の標準機能である「自動バックアップ」が有効な場合、
+OS の働きによって以下のとおりデータが端末外へ複製されることがあります。
+</p>
+
+<h3>2-1. Google アカウントへのバックアップ（文字情報のみ）</h3>
+<p>
+釣果と釣り具の<strong>文字情報（魚種名・日付・サイズ・場所・メモなど）だけ</strong>が、
+Android の自動バックアップ機能により、利用者ご自身の Google アカウントへ保存されます。
+これにより、端末を初期化したり機種変更したりしたあとでも記録を復元できます。
+</p>
+<p>
+<strong>写真はこのバックアップに含まれません。</strong>
+自動バックアップには1アプリあたりの容量上限があり、写真を含めると上限に達して
+バックアップ全体が停止してしまうためです。
+したがって Google アカウントから復元した場合、記録は戻りますが写真は表示されません。
+</p>
+<p>
+このバックアップを実行するのは Android OS であり、開発者がその内容を閲覧・取得することはできません。
+保存先は利用者ご自身の Google アカウントであり、その取り扱いには Google のプライバシーポリシーが適用されます。
+自動バックアップが不要な場合は、端末の「設定」から無効にできます。
+</p>
+
+<h3>2-2. 機種変更時の端末間転送（写真を含む）</h3>
+<p>
+新しい端末へデータを移行する機能を使った場合に限り、<strong>写真を含むすべてのデータ</strong>が
+旧端末から新端末へ直接転送されます。この転送はクラウドを経由しません。
+</p>
+
+<h3>2-3. アンインストールした場合</h3>
+<p>
+本アプリをアンインストールすると、端末内のデータ（記録・写真の両方）は削除されます。
+写真は 2-1 のバックアップに含まれないため、<strong>アンインストール後に写真を復元することはできません。</strong>
+残しておきたい写真は、あらかじめ端末の写真アプリ等にも保存しておいてください。
 </p>
 
 <h2>3. 端末の権限について</h2>
@@ -77,6 +109,10 @@
 <h2>5. 第三者への情報提供</h2>
 <p>
 本アプリは利用者の情報を収集しないため、第三者への提供・販売・共有を行うことはありません。
+</p>
+<p>
+なお 2-1 のバックアップは、開発者が利用者の情報を第三者へ提供するものではありません。
+Android OS が利用者ご自身の Google アカウントへ保存する仕組みであり、開発者はその内容に関与しません。
 </p>
 
 <h2>6. お子様のプライバシー</h2>
@@ -124,8 +160,40 @@ This includes your catch records, your gear records, and any photos you capture 
 or select from your device's photo library.
 </p>
 <p>
-This data is never transmitted off your device. Uninstalling the App deletes this data
-from your device, so please back up any photos you wish to keep beforehand.
+<strong>The App itself never transmits this data anywhere.</strong> However, when Android's
+built-in Auto Backup is enabled, the operating system may copy some of it off the device as
+described below.
+</p>
+
+<h3>2-1. Backup to your Google Account (text only)</h3>
+<p>
+<strong>Only the text of your records</strong> - species, date, size, location, notes and the
+like - is saved to your own Google Account by Android's Auto Backup, so that your records can
+be restored after a factory reset or a move to a new device.
+</p>
+<p>
+<strong>Photos are not included in this backup.</strong> Auto Backup imposes a per-app size
+limit, and including photos would reach it and stop the backup altogether. Restoring from your
+Google Account therefore brings back your records but not your photos.
+</p>
+<p>
+This backup is performed by Android itself; the Developer cannot view or retrieve its contents.
+It is stored in your own Google Account and handled under Google's privacy policy. You can turn
+Auto Backup off in your device settings.
+</p>
+
+<h3>2-2. Device-to-device transfer (includes photos)</h3>
+<p>
+If you use your device's data-transfer feature when setting up a new phone,
+<strong>all data including photos</strong> is copied directly from the old device to the new
+one. This transfer does not pass through any cloud service.
+</p>
+
+<h3>2-3. If you uninstall</h3>
+<p>
+Uninstalling the App deletes both the records and the photos from your device. Because photos
+are not part of the backup described in 2-1, <strong>they cannot be recovered afterwards.</strong>
+Please save any photos you want to keep to your device's photo app as well.
 </p>
 
 <h2>3. Device Permissions</h2>
@@ -150,6 +218,10 @@ SIL Open Font License 1.1) are bundled into the App and are never fetched from a
 
 <h2>5. Disclosure to Third Parties</h2>
 <p>Because the App collects no user information, there is nothing to sell, share, or disclose.</p>
+<p>
+The backup described in 2-1 is not the Developer disclosing your information to anyone. It is
+Android saving it to your own Google Account, and the Developer plays no part in it.
+</p>
 
 <h2>6. Children's Privacy</h2>
 <p>
